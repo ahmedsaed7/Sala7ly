@@ -1,0 +1,212 @@
+servicehub/
+├── app/                          # Next.js App Router structure
+│   ├── (auth)/                   # Authentication group (route group)
+│   │   ├── login/                # Login page
+│   │   │   ├── page.tsx          # Login UI
+│   │   │   └── actions.ts        # Server actions for login
+│   │   ├── register/             # Registration page
+│   │   │   ├── page.tsx
+│   │   │   └── actions.ts        # Server actions for registration
+│   │   ├── forgot-password/      # Password recovery
+│   │   │   ├── page.tsx
+│   │   │   └── actions.ts
+│   │   └── reset-password/[token]/
+│   │       └── page.tsx
+│   │
+│   ├── dashboard/                # User dashboard (protected)
+│   │   ├── page.tsx              # Dashboard home 
+│   │   ├── layout.tsx            # Dashboard layout with sidebar
+│   │   ├── bookings/             # User bookings
+│   │   │   ├── page.tsx
+│   │   │   └── [bookingId]/
+│   │   │       └── page.tsx      # Booking details
+│   │   └── profile/              # User profile
+│   │   |    └── page.tsx
+│   │   └── ser
+│   ├── admin/                    # Admin section (protected)
+│   │   ├── page.tsx              # Admin dashboard
+│   │   ├── layout.tsx            # Admin layout
+│   │   ├── services/             # Service management
+│   │   │   ├── page.tsx          # Service listing
+│   │   │   └── [serviceId]/
+│   │   │       └── page.tsx      # Service edit
+│   │   ├── users/                # User management
+│   │   │   └── page.tsx
+│   │   └── analytics/            # Analytics dashboard
+│   │       └── page.tsx
+│   │
+│   ├── services/                 # Public services section
+│   │   ├── page.tsx              # Service catalog/listing
+│   │   ├── [serviceId]/          # Service detail page
+│   │   │   ├── page.tsx          # Service details
+│   │   │   └── book/             # Booking flow
+│   │   │       └── page.tsx      # Booking form
+│   │   ├── category/[categoryId]/ # Category-filtered services
+│   │   │   └── page.tsx
+│   │   └──create
+│   │         └── page.tsx
+│   │
+│   ├── api/                      # API routes
+│   │   ├── auth/                 # Auth endpoints
+│   │   │   ├── login/route.ts
+│   │   │   ├── register/route.ts
+│   │   │   └── refresh/route.ts
+│   │   ├── services/             # Service CRUD
+│   │   │   ├── route.ts          # List/create
+│   │   │   └── [id]/route.ts     # Get/update/delete
+│   │   ├── bookings/             # Booking endpoints
+│   │   │   ├── route.ts
+│   │   │   └── [id]/route.ts
+│   │   ├── users/                # User management
+│   │   │   ├── route.ts
+│   │   │   └── [id]/route.ts
+│   │   └── webhooks/             # External service webhooks
+│   │       ├── payment/route.ts
+│   │       └── notification/route.ts
+│   │
+│   ├── layout.tsx                # Global layout (header/footer)
+│   └── page.tsx                  # Home page
+│
+├──Pages
+|   |
+|   ├── AboutPage
+|   |       └── aboutPage.tsx
+|   ├── ContactPage 
+|   |       └── contactPage.tsx
+|   ├── HomePage
+|   |       ├──Sections 
+|   |       |     ├── ApplaySection.tsx
+|   |       |     ├── MainSection.tsx
+|   |       |     ├── OurPrandsSections
+|   |       |     ├── OurServicesSecyion
+|   |       |     ├── statssection 
+|   |       |      
+|   |       └──Homepage.tsx
+|   |
+|
+|
+|
+|
+├── components/                   # React components
+│   ├── ui/                       # Basic UI elements
+│   │   ├── Button/
+│   │   │   ├── Button.tsx
+│   │   │   └── Button.test.tsx
+│   │   ├── Card/
+│   │   │   ├── Card.tsx
+│   │   │   └── Card.test.tsx
+│   │   ├── Form/                 # Form elements
+│   │   │   ├── Input.tsx
+│   │   │   ├── Select.tsx
+│   │   │   ├── Checkbox.tsx
+│   │   │   ├── RadioGroup.tsx
+│   │   │   └── FileUpload.tsx
+│   │   ├── Feedback/             # User feedback
+│   │   │   ├── Toast.tsx
+│   │   │   ├── Alert.tsx
+│   │   │   ├── Skeleton.tsx
+│   │   │   └── ProgressBar.tsx
+│   │   └── Navigation/           # Navigation elements
+│   │       ├── Tabs.tsx
+│   │       ├── Pagination.tsx
+│   │       └── Breadcrumbs.tsx
+│   │
+│   ├── composite/                # Composite components 
+│   │   ├── ServiceCard/          # Service listing card
+│   │   │   ├── ServiceCard.tsx
+│   │   │   └── ServiceCard.test.tsx
+│   │   ├── BookingForm/          # Service booking form
+│   │   │   ├── BookingForm.tsx
+│   │   │   └── BookingForm.test.tsx
+│   │   ├── ServiceFilter/        # Filter component
+│   │   │   └── ServiceFilter.tsx
+│   │   ├── UserProfileForm/
+│   │   │   └── UserProfileForm.tsx
+│   │   ├── Modals/               # Modal dialogs
+│   │   │   ├── ConfirmModal.tsx
+│   │   │   └── FormModal.tsx
+│   │   └── DataDisplay/          # Data visualization
+│   │       ├── StatCard.tsx
+│   │       ├── Chart.tsx
+│   │       └── Table.tsx
+│   │
+│   ├── layout/                   # Layout components
+│   │   ├── Header/
+│   │   │   ├── Header.tsx
+│   │   │   └── MobileMenu.tsx
+│   │   ├── Footer/
+│   │   │   └── Footer.tsx
+│   │   ├── Sidebar/
+│   │   │   └── Sidebar.tsx
+│   │   └── PageContainer/
+│   │       └── PageContainer.tsx
+│
+├── hooks/                        # Custom React hooks
+│   ├── useAuth.ts                # Authentication hook
+│   ├── useServices.ts            # Service data hook
+│   ├── useBookings.ts            # Booking data hook
+│   ├── useToast.ts               # Toast notification hook
+│   ├── useForm.ts                # Form handling hook
+│   └── useMediaQuery.ts          # Responsive design hook
+│
+├── lib/                          # Utility functions and services
+│   ├── api/                      # API client
+│   │   ├── client.ts             # Axios/fetch instance
+│   │   ├── auth.ts               # Auth API methods
+│   │   ├── services.ts           # Service API methods
+│   │   └── bookings.ts           # Booking API methods
+│   │
+│   ├── utils/                    # Utility functions
+│   │   ├── date.ts               # Date formatting
+│   │   ├── validation.ts         # Form validation
+│   │   ├── formatting.ts         # Text/number formatting
+│   │   └── storage.ts            # localStorage helpers
+│   │
+│   ├── config/                   # Configuration
+│   │   ├── constants.ts          # App constants
+│   │   └── endpoints.ts          # API endpoints
+│   │
+│   └── auth/                     # Auth utilities
+│       ├── authProvider.tsx      # Auth context provider
+│       └── protectedRoute.ts     # Route protection
+│
+├── store/                        # State management (Redux)
+│   ├── index.ts                  # Store setup
+│   ├── middleware.ts             # Custom middleware
+│   ├── slices/                   # Redux slices
+│   │   ├── authSlice.ts
+│   │   ├── serviceSlice.ts
+│   │   ├── bookingSlice.ts
+│   │   └── uiSlice.ts            # UI state (modals, etc.)
+│   └── selectors/                # Memoized selectors
+│       ├── authSelectors.ts
+│       ├── serviceSelectors.ts
+│       └── bookingSelectors.ts
+│
+├── styles/                       # Global styles
+│   ├── globals.css               # Global styles
+│   ├── variables.css             # CSS variables
+│   └── theme/                    # Theme configuration
+│       ├── colors.ts
+│       ├── typography.ts
+│       ├── spacing.ts
+│       └── breakpoints.ts
+│
+├── types/                        # TypeScript type definitions
+│   ├── auth.ts                   # Auth-related types
+│   ├── service.ts                # Service-related types
+│   ├── booking.ts                # Booking-related types
+│   └── api.ts                    # API response types
+│
+├── middleware.ts                 # Next.js middleware (auth, etc.)
+├── public/                       # Static assets
+│   ├── images/
+│   ├── icons/
+│   └── fonts/
+│
+├── .env.local                    # Environment variables
+├── .env.example                  # Example env file
+├── next.config.js                # Next.js configuration
+├── package.json                  # Dependencies
+├── tsconfig.json                 # TypeScript config
+└── README.md                     # Project documentation

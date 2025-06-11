@@ -1,0 +1,232 @@
+/* @import "tailwindcss";
+
+:root {
+  --primary: #6A1B9A;
+  --secondary: #2A5C82;
+  --danger: #E53935;
+  --warning: #FFA726;
+  --info: #FFD54F;
+  --success: #4CAF50;
+  --light: #F5F5F5;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+} */
+
+@import "tailwindcss";
+
+:root {
+  --primary: #6A1B9A;
+  --secondary: #2A5C82;
+  --danger: #E53935;
+  --warning: #FFA726;
+  --info: #FFD54F;
+  --success: #4CAF50;
+  --light: #F5F5F5;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* Text colors */
+.text-primary { color: var(--primary); }
+.text-secondary { color: var(--secondary); }
+.text-danger { color: var(--danger); }
+.text-warning { color: var(--warning); }
+.text-info { color: var(--info); }
+.text-success { color: var(--success); }
+.text-light { color: var(--light); }
+
+/* Background colors */
+.bg-primary { background-color: var(--primary); }
+.bg-secondary { background-color: var(--secondary); }
+.bg-danger { background-color: var(--danger); }
+.bg-warning { background-color: var(--warning); }
+.bg-info { background-color: var(--info); }
+.bg-success { background-color: var(--success); }
+.bg-light { background-color: var(--light); }
+
+/* Border colors */
+.border-primary { border-color: var(--primary); }
+.border-secondary { border-color: var(--secondary); }
+.border-danger { border-color: var(--danger); }
+.border-warning { border-color: var(--warning); }
+.border-info { border-color: var(--info); }
+.border-success { border-color: var(--success); }
+.border-light { border-color: var(--light); }
+
+/* Button styles */
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-weight: 500;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: color-mix(in srgb, var(--primary) 85%, black);
+}
+
+.btn-secondary {
+  background-color: var(--secondary);
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: color-mix(in srgb, var(--secondary) 85%, black);
+}
+
+.btn-danger {
+  background-color: var(--danger);
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: color-mix(in srgb, var(--danger) 85%, black);
+}
+
+.btn-warning {
+  background-color: var(--warning);
+  color: black;
+}
+
+.btn-warning:hover {
+  background-color: color-mix(in srgb, var(--warning) 85%, black);
+}
+
+.btn-info {
+  background-color: var(--info);
+  color: black;
+}
+
+.btn-info:hover {
+  background-color: color-mix(in srgb, var(--info) 85%, black);
+}
+
+.btn-success {
+  background-color: var(--success);
+  color: white;
+}
+
+.btn-success:hover {
+  background-color: color-mix(in srgb, var(--success) 85%, black);
+}
+
+.btn-outline-primary {
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  background-color: transparent;
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+/* Card styles */
+.card {
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-primary {
+  background-color: var(--primary);
+  color: white;
+}
+
+.card-secondary {
+  background-color: var(--secondary);
+  color: white;
+}
+
+.card-light {
+  background-color: var(--light);
+  color: black;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* Custom scrollbar styles */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #EFB036 #3B6790;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #3B6790;
+  border-radius: 10px;
+  margin-block: 0.5rem;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #EFB036;
+  border-radius: 10px;
+  border: 2px solid #3B6790;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #FFD700;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 20s linear infinite;
+}
+

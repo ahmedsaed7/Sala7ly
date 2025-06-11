@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  @keyframes gradient-xy {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .animate-gradient-xy {
+    background-size: 400% 400%;
+    animation: gradient-xy 15s ease infinite;
+  }
+
+  @keyframes progress {
+    0% {
+      width: 0%;
+      opacity: 1;
+    }
+    50% {
+      width: 100%;
+      opacity: 0.5;
+    }
+    100% {
+      width: 100%;
+      opacity: 0;
+    }
+  }
+
+  .animate-progress {
+    animation: progress 0.3s ease-in-out;
+  }
+} 
